@@ -1,0 +1,343 @@
+2012-06-21 22:25:11.175+0000: Creating new db @ /home/ovidiu/workspace/fileupload-web/data/graph.db/neostore
+2012-06-21 22:25:12.914+0000: Opened [/home/ovidiu/workspace/fileupload-web/data/graph.db/nioneo_logical.log.1] clean empty log, version=0, lastTxId=1
+2012-06-21 22:25:13.061+0000: TM new log: tm_tx_log.1
+2012-06-21 22:25:13.158+0000: Opened [/home/ovidiu/workspace/fileupload-web/data/graph.db/index/lucene.log.1] clean empty log, version=0, lastTxId=1
+2012-06-21 22:25:13.207+0000: --- STARTUP diagnostics START ---
+2012-06-21 22:25:13.207+0000: Neo4j Kernel properties:
+    store_dir=/home/ovidiu/workspace/fileupload-web/data/graph.db
+    remote_logging_host=127.0.0.1
+    read_only=false
+    neo4j.ext.udc.host=udc.neo4j.org
+    logical_log=/home/ovidiu/workspace/fileupload-web/data/graph.db/nioneo_logical.log
+    remote_logging_port=4560
+    gc_monitor_threshold=200ms
+    load_kernel_extensions=true
+    array_block_size=120
+    intercept_committing_transactions=false
+    node_auto_indexing=false
+    neostore.relationshipstore.db.mapped_memory=318M
+    dump_configuration=false
+    gc_monitor_wait_time=100ms
+    cache_type=soft
+    intercept_deserialized_transactions=false
+    neostore.nodestore.db.mapped_memory=72M
+    neo4j.ext.udc.first_delay=600000
+    neo4j.ext.udc.reg=unreg
+    lucene_searcher_cache_size=2147483647
+    neo4j.ext.udc.interval=86400000
+    use_memory_mapped_buffers=true
+    rebuild_idgenerators_fast=true
+    neostore.propertystore.db.index.keys.mapped_memory=1M
+    neostore.propertystore.db.arrays.mapped_memory=250M
+    neostore.propertystore.db.strings.mapped_memory=221M
+    neo_store=/home/ovidiu/workspace/fileupload-web/data/graph.db/neostore
+    neostore.propertystore.db.index.mapped_memory=1M
+    backup_slave=false
+    neostore.propertystore.db.mapped_memory=260M
+    gcr_cache_min_log_interval=60s
+    relationship_auto_indexing=false
+    relationship_grab_size=100
+    string_block_size=120
+    lucene_writer_cache_size=2147483647
+    grab_file_lock=true
+    node_cache_array_fraction=1.0
+    remote_logging_enabled=false
+    allow_store_upgrade=false
+    execution_guard_enabled=false
+    neo4j.ext.udc.enabled=true
+    relationship_cache_array_fraction=1.0
+2012-06-21 22:25:13.210+0000: Diagnostics providers:
+    org.neo4j.kernel.configuration.Config
+    org.neo4j.kernel.info.DiagnosticsManager
+    SYSTEM_MEMORY
+    JAVA_MEMORY
+    OPERATING_SYSTEM
+    JAVA_VIRTUAL_MACHINE
+    CLASSPATH
+    LIBRARY_PATH
+    SYSTEM_PROPERTIES
+    LINUX_SCHEDULERS
+2012-06-21 22:25:13.210+0000: System memory information:
+    Total Physical memory: 3.14 GB
+    Free Physical memory: 96.85 MB
+    Committed virtual memory: 1.11 GB
+    Total swap space: 4.72 GB
+    Free swap space: 4.71 GB
+2012-06-21 22:25:13.214+0000: JVM memory information:
+    Free  memory: 205.20 MB
+    Total memory: 302.06 MB
+    Max   memory: 714.69 MB
+    Garbage Collector: PS Scavenge: [PS Eden Space, PS Survivor Space]
+    Garbage Collector: PS MarkSweep: [PS Eden Space, PS Survivor Space, PS Old Gen, PS Perm Gen]
+    Memory Pool: Code Cache (Non-heap memory): committed=2.38 MB, used=2.25 MB, max=48.00 MB, threshold=0.00 B
+    Memory Pool: PS Eden Space (Heap memory): committed=214.75 MB, used=25.69 MB, max=214.75 MB, threshold=?
+    Memory Pool: PS Survivor Space (Heap memory): committed=26.63 MB, used=26.62 MB, max=26.63 MB, threshold=?
+    Memory Pool: PS Old Gen (Heap memory): committed=60.69 MB, used=44.54 MB, max=536.00 MB, threshold=0.00 B
+    Memory Pool: PS Perm Gen (Non-heap memory): committed=34.88 MB, used=25.09 MB, max=128.00 MB, threshold=0.00 B
+2012-06-21 22:25:13.218+0000: Operating system information:
+    Operating System: Linux; version: 2.6.38-15-generic-pae; arch: i386; cpus: 2
+    Max number of file descriptors: 4096
+    Number of open file descriptors: 194
+    Process id: 23704@ovidiu-desktop
+    Byte order: LITTLE_ENDIAN
+2012-06-21 22:25:13.219+0000: JVM information:
+    VM Name: OpenJDK Server VM
+    VM Vendor: Sun Microsystems Inc.
+    VM Version: 20.0-b11
+    JIT compiler: HotSpot Tiered Compilers
+    VM Arguments: [-Dmaven.home=EMBEDDED, -Dclassworlds.conf=/home/ovidiu/workspace/.metadata/.plugins/org.eclipse.m2e.core/launches/m2conf4860164658002303555.tmp, -Dfile.encoding=UTF-8]
+2012-06-21 22:25:13.220+0000: Java classpath:
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/spring-expression/3.0.7.RELEASE/spring-expression-3.0.7.RELEASE.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/taglibs/standard/1.1.2/standard-1.1.2.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/spring-asm/3.0.7.RELEASE/spring-asm-3.0.7.RELEASE.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/javax/servlet/jstl/1.2/jstl-1.2.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/spring-beans/3.0.7.RELEASE/spring-beans-3.0.7.RELEASE.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/neo4j/neo4j-lucene-index/1.7/neo4j-lucene-index-1.7.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/apache/geronimo/specs/geronimo-annotation_1.0_spec/1.1.1/geronimo-annotation_1.0_spec-1.1.1.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/log4j/log4j/1.2.15/log4j-1.2.15.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/spring-aop/3.0.7.RELEASE/spring-aop-3.0.7.RELEASE.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/spring-orm/3.1.1.RELEASE/spring-orm-3.1.1.RELEASE.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/data/spring-data-neo4j/2.1.0.BUILD-SNAPSHOT/spring-data-neo4j-2.1.0.BUILD-SNAPSHOT.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.jar
+     [classpath] /home/ovidiu/Workspace/eclipse/plugins/org.eclipse.m2e.maven.runtime_1.0.100.20110804-1717/jars/plexus-classworlds-2.4.jar
+     [bootstrap] /usr/lib/jvm/java-6-openjdk/jre/lib/netx.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/spring-core/3.0.7.RELEASE/spring-core-3.0.7.RELEASE.jar
+     [bootstrap] /usr/lib/jvm/java-6-openjdk/jre/lib/modules/jdk.boot.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/codehaus/jackson/jackson-jaxrs/1.6.1/jackson-jaxrs-1.6.1.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/mortbay/jetty/jetty-maven-plugin/7.1.2.v20100523/jetty-maven-plugin-7.1.2.v20100523.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/slf4j/jcl-over-slf4j/1.6.1/jcl-over-slf4j-1.6.1.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/primefaces/primefaces/3.3.1/primefaces-3.3.1.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/neo4j/neo4j-cypher/1.7/neo4j-cypher-1.7.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/hibernate/hibernate-validator/4.1.0.Final/hibernate-validator-4.1.0.Final.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/eclipse/jetty/jetty-io/7.1.2.v20100523/jetty-io-7.1.2.v20100523.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/eclipse/jetty/jetty-server/7.1.2.v20100523/jetty-server-7.1.2.v20100523.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/javax/mail/mail/1.4.1/mail-1.4.1.jar
+     [bootstrap] /usr/lib/jvm/java-6-openjdk/jre/lib/rt.jar
+     [bootstrap] /usr/lib/jvm/java-6-openjdk/jre/lib/charsets.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/com/sun/faces/jsf-impl/2.1.6/jsf-impl-2.1.6.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/spring-context/3.0.7.RELEASE/spring-context-3.0.7.RELEASE.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/asm/asm-commons/3.1/asm-commons-3.1.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/eclipse/jetty/jetty-util/7.1.2.v20100523/jetty-util-7.1.2.v20100523.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/eclipse/jetty/jetty-annotations/7.1.2.v20100523/jetty-annotations-7.1.2.v20100523.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/eclipse/jetty/jetty-webapp/7.1.2.v20100523/jetty-webapp-7.1.2.v20100523.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/apache/maven/plugin-tools/maven-plugin-tools-api/2.5.1/maven-plugin-tools-api-2.5.1.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/scala-lang/scala-library/2.9.0-1/scala-library-2.9.0-1.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/aspectj/aspectjweaver/1.6.8/aspectjweaver-1.6.8.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar
+     [bootstrap] /usr/lib/jvm/java-6-openjdk/jre/lib/resources.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/com/sun/faces/jsf-api/2.1.7/jsf-api-2.1.7.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/slf4j/slf4j-log4j12/1.6.1/slf4j-log4j12-1.6.1.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/spring-jdbc/3.1.1.RELEASE/spring-jdbc-3.1.1.RELEASE.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/codehaus/plexus/plexus-utils/1.4.6/plexus-utils-1.4.6.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/commons-io/commons-io/1.3.2/commons-io-1.3.2.jar
+     [loader.0] file:/home/ovidiu/workspace/fileupload-web/target/classes/
+     [loader.0] file:/home/ovidiu/.m2/repository/org/neo4j/neo4j-udc/1.7/neo4j-udc-1.7.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/neo4j/neo4j-graph-matching/1.7/neo4j-graph-matching-1.7.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.6.1/jackson-core-asl-1.6.1.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/commons-digester/commons-digester/1.8.1/commons-digester-1.8.1.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/asm/asm/3.1/asm-3.1.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/com/sun/jersey/jersey-core/1.4/jersey-core-1.4.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/eclipse/jetty/jetty-servlet/7.1.2.v20100523/jetty-servlet-7.1.2.v20100523.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/aspectj/aspectjrt/1.6.12/aspectjrt-1.6.12.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/neo4j/neo4j-jmx/1.7/neo4j-jmx-1.7.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/spring-context-support/3.0.7.RELEASE/spring-context-support-3.0.7.RELEASE.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/eclipse/jetty/jetty-jndi/7.1.2.v20100523/jetty-jndi-7.1.2.v20100523.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/neo4j/neo4j/1.7/neo4j-1.7.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.6.1/jackson-mapper-asl-1.6.1.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/eclipse/jetty/jetty-continuation/7.1.2.v20100523/jetty-continuation-7.1.2.v20100523.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/mortbay/jetty/jsp-2.1-glassfish/2.1.v20100127/jsp-2.1-glassfish-2.1.v20100127.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar
+     [bootstrap] /usr/lib/jvm/java-6-openjdk/jre/lib/sunrsasign.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/com/sun/jersey/jersey-server/1.4/jersey-server-1.4.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/eclipse/jetty/jetty-http/7.1.2.v20100523/jetty-http-7.1.2.v20100523.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/neo4j/neo4j-kernel/1.7/neo4j-kernel-1.7.jar
+     [bootstrap] /usr/lib/jvm/java-6-openjdk/jre/classes
+     [bootstrap] /usr/lib/jvm/java-6-openjdk/jre/lib/jsse.jar
+     [bootstrap] /usr/lib/jvm/java-6-openjdk/jre/lib/plugin.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/spring-test/3.0.7.RELEASE/spring-test-3.0.7.RELEASE.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/eclipse/jetty/jetty-jsp-2.1/7.1.2.v20100523/jetty-jsp-2.1-7.1.2.v20100523.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/eclipse/jetty/jetty-xml/7.1.2.v20100523/jetty-xml-7.1.2.v20100523.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/data/spring-data-commons-core/1.3.1.BUILD-SNAPSHOT/spring-data-commons-core-1.3.1.BUILD-SNAPSHOT.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/neo4j/neo4j-rest-graphdb/1.6.M02/neo4j-rest-graphdb-1.6.M02.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/eclipse/jdt/core/compiler/ecj/3.5.1/ecj-3.5.1.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/commons-fileupload/commons-fileupload/1.2.2/commons-fileupload-1.2.2.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/cglib/cglib/2.2/cglib-2.2.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar
+     [bootstrap] /usr/lib/jvm/java-6-openjdk/jre/lib/jce.jar
+     [bootstrap] /usr/lib/jvm/java-6-openjdk/jre/lib/rhino.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/com/sun/jersey/jersey-client/1.4/jersey-client-1.4.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/neo4j/neo4j-graph-algo/1.7/neo4j-graph-algo-1.7.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/neo4j/server-api/1.6.M02/server-api-1.6.M02.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/eclipse/jetty/jetty-plus/7.1.2.v20100523/jetty-plus-7.1.2.v20100523.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1/geronimo-jta_1.1_spec-1.1.1.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/neo4j/neo4j-cypher-dsl/1.7/neo4j-cypher-dsl-1.7.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/spring-web/3.0.7.RELEASE/spring-web-3.0.7.RELEASE.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/asm/asm-tree/3.1/asm-tree-3.1.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/spring-tx/3.0.7.RELEASE/spring-tx-3.0.7.RELEASE.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/eclipse/jetty/jetty-security/7.1.2.v20100523/jetty-security-7.1.2.v20100523.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/eclipse/jetty/jetty-start/7.1.2.v20100523/jetty-start-7.1.2.v20100523.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/data/spring-data-neo4j-rest/2.0.0.RELEASE/spring-data-neo4j-rest-2.0.0.RELEASE.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/eclipse/jetty/jetty-jmx/7.1.2.v20100523/jetty-jmx-7.1.2.v20100523.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/security/spring-security-core/3.0.7.RELEASE/spring-security-core-3.0.7.RELEASE.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/jtidy/jtidy/4aug2000r7-dev/jtidy-4aug2000r7-dev.jar
+     [loader.1] file:/home/ovidiu/.m2/repository/org/mortbay/jetty/jsp-api-2.1-glassfish/2.1.v20100127/jsp-api-2.1-glassfish-2.1.v20100127.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/security/spring-security-config/3.0.7.RELEASE/spring-security-config-3.0.7.RELEASE.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/spring-aspects/3.0.7.RELEASE/spring-aspects-3.0.7.RELEASE.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/springframework/security/spring-security-web/3.0.7.RELEASE/spring-security-web-3.0.7.RELEASE.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/commons-beanutils/commons-beanutils-core/1.8.0/commons-beanutils-core-1.8.0.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/org/apache/lucene/lucene-core/3.5.0/lucene-core-3.5.0.jar
+     [loader.0] file:/home/ovidiu/.m2/repository/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar
+2012-06-21 22:25:13.223+0000: Library path:
+    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/server
+    /usr/lib/jvm/java-6-openjdk/jre/lib/i386
+    /usr/lib/jvm/java-6-openjdk/lib/i386
+    /usr/lib/jvm/java-6-openjdk/jre/lib/i386/client
+    /usr/lib/jvm/java-6-openjdk/jre/lib/i386
+    /home/ovidiu/workspace/fileupload-web
+    /usr/java/packages/lib/i386
+    /usr/lib/i386-linux-gnu/jni
+    /lib/i386-linux-gnu
+    /usr/lib/i386-linux-gnu
+    /usr/lib/jni
+    /lib
+    /usr/lib
+2012-06-21 22:25:13.224+0000: System.properties:
+    sun.boot.library.path = /usr/lib/jvm/java-6-openjdk/jre/lib/i386
+    guice.disable.misplaced.annotation.check = true
+    path.separator = :
+    file.encoding.pkg = sun.io
+    sun.java.launcher = SUN_STANDARD
+    user.country = US
+    sun.os.patch.level = unknown
+    user.dir = /home/ovidiu/workspace/fileupload-web
+    classworlds.conf = /home/ovidiu/workspace/.metadata/.plugins/org.eclipse.m2e.core/launches/m2conf4860164658002303555.tmp
+    sun.jnu.encoding = UTF-8
+    sun.management.compiler = HotSpot Tiered Compilers
+    user.home = /home/ovidiu
+    user.timezone = Europe/Bucharest
+    file.encoding = UTF-8
+    user.name = ovidiu
+    sun.java.command = org.codehaus.plexus.classworlds.launcher.Launcher -B jetty:run
+    sun.arch.data.model = 32
+    user.language = en
+    securerandom.source = file:/dev/./urandom
+    maven.home = /home/ovidiu/workspace/fileupload-web/EMBEDDED
+    file.separator = /
+    sun.io.unicode.encoding = UnicodeLittle
+    sun.cpu.endian = little
+    sun.desktop = gnome
+    sun.cpu.isalist = 
+2012-06-21 22:25:13.224+0000: Linux scheduler information:
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    none
+    noop deadline [cfq] 
+    noop deadline [cfq] 
+    noop deadline [cfq] 
+2012-06-21 22:25:13.227+0000: --- STARTUP diagnostics END ---
+2012-06-21 22:25:13.240+0000: Extension org.neo4j.kernel.KernelExtension[kernel udc] loaded ok
+2012-06-21 22:25:13.329+0000: Extension org.neo4j.kernel.KernelExtension[kernel jmx] loaded ok
+2012-06-21 22:25:13.333+0000: --- STARTUP diagnostics for KernelDiagnostics:Versions START ---
+2012-06-21 22:25:13.334+0000: Graph Database: org.neo4j.kernel.EmbeddedGraphDatabase StoreId[time:1340317511176, id:7112024380762940430, store version: 13561656364791302]
+2012-06-21 22:25:13.334+0000: Kernel version: Neo4j - Graph Database Kernel 1.7
+2012-06-21 22:25:13.334+0000: Neo4j component versions:
+2012-06-21 22:25:13.339+0000:   Neo4j - Graph Database Kernel 1.7
+2012-06-21 22:25:13.339+0000: --- STARTUP diagnostics for KernelDiagnostics:Versions END ---
+2012-06-21 22:25:13.340+0000: --- STARTUP diagnostics for NEO_STORE_VERSIONS START ---
+2012-06-21 22:25:13.341+0000: Store versions:
+    Store versions:
+      NeoStore v0.A.0
+      NodeStore v0.A.0
+      RelationshipStore v0.A.0
+      RelationshipTypeStore v0.A.0
+      PropertyStore v0.A.0
+      PropertyIndexStore v0.A.0
+      StringPropertyStore v0.A.0
+      ArrayPropertyStore v0.A.0
+2012-06-21 22:25:13.341+0000: --- STARTUP diagnostics for NEO_STORE_VERSIONS END ---
+2012-06-21 22:25:13.341+0000: --- STARTUP diagnostics for NEO_STORE_ID_USAGE START ---
+2012-06-21 22:25:13.341+0000: Id usage:
+    Id usage:
+      NodeStore: used=1 high=0
+      RelationshipStore: used=0 high=-1
+      RelationshipTypeStore: used=0 high=-1
+      PropertyStore: used=0 high=-1
+      PropertyIndexStore: used=0 high=-1
+      StringPropertyStore: used=1 high=0
+      ArrayPropertyStore: used=1 high=0
+2012-06-21 22:25:13.341+0000: --- STARTUP diagnostics for NEO_STORE_ID_USAGE END ---
+2012-06-21 22:25:13.341+0000: --- STARTUP diagnostics for KernelDiagnostics:StoreFiles START ---
+2012-06-21 22:25:13.342+0000: Storage files:
+    nioneo_logical.log.active: 4.00 B
+    neostore.relationshipstore.db: 0.00 B
+    neostore.nodestore.db: 9.00 B
+    neostore.propertystore.db.arrays: 128.00 B
+    neostore.propertystore.db.arrays.id: 9.00 B
+    neostore.propertystore.db.index.keys: 38.00 B
+    active_tx_log: 11.00 B
+    neostore.propertystore.db: 0.00 B
+    neostore.relationshiptypestore.db: 0.00 B
+    neostore.relationshiptypestore.db.names.id: 9.00 B
+    nioneo_logical.log.1: 16.00 B
+    neostore.id: 9.00 B
+    tm_tx_log.1: 0.00 B
+    neostore: 54.00 B
+    neostore.propertystore.db.index.id: 9.00 B
+    index:
+      lucene.log.1: 16.00 B
+      lucene.log.active: 4.00 B
+      lucene-store.db: 40.00 B
+    - Total: 60.00 B
+    neostore.propertystore.db.index: 0.00 B
+    neostore.relationshiptypestore.db.names: 38.00 B
+    messages.log: 19.62 kB
+    neostore.relationshipstore.db.id: 9.00 B
+    neostore.propertystore.db.strings.id: 9.00 B
+    neostore.propertystore.db.strings: 128.00 B
+    neostore.nodestore.db.id: 9.00 B
+    neostore.propertystore.db.id: 9.00 B
+    lock: 0.00 B
+    neostore.propertystore.db.index.keys.id: 9.00 B
+    neostore.relationshiptypestore.db.id: 9.00 B
+2012-06-21 22:25:13.343+0000: --- STARTUP diagnostics for KernelDiagnostics:StoreFiles END ---
+2012-06-21 22:25:13.344+0000: Started - database is now available
+2012-06-21 22:25:13.352+0000: GC Monitor started. 
+2012-06-21 22:25:13.419+0000: Stopping - database is now unavailable
+2012-06-21 22:25:13.420+0000: TM shutting down
+2012-06-21 22:25:13.452+0000: GC Monitor stopped. 
+2012-06-21 22:25:13.488+0000: Closed log /home/ovidiu/workspace/fileupload-web/data/graph.db/index/lucene.log
+2012-06-21 22:25:13.537+0000: Closed log /home/ovidiu/workspace/fileupload-web/data/graph.db/nioneo_logical.log
+2012-06-21 22:25:13.985+0000: NeoStore closed
+2012-06-21 22:25:13.985+0000: --- SHUTDOWN diagnostics START ---
+2012-06-21 22:25:13.986+0000: --- SHUTDOWN diagnostics END ---

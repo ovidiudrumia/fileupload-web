@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Welcome to JSF_Spring_Hibernate_Project</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:outputText value="USERs : "></h:outputText>
+		<p:dataTable id="users" var="user" value="#{userBkB.userList}"
+			style="width: 10%">
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Login" />
+				</f:facet>
+				<h:outputText value="#{user.login}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Name" />
+				</f:facet>
+				<h:outputText value="#{user.name}" />
+			</p:column>
+			
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Role" />
+				</f:facet>
+				<h:outputText value="#{user.role}" />
+			</p:column>
+		</p:dataTable>
+		<p:commandButton id="removeAll" value="Remove All" action="#{userBkB.deleteAll}"
+			ajax="false" icon="ui-icon-check" immediate="false" />
+	</h:form>
+</h:body>
+
+</html>

@@ -1,0 +1,257 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Welcome to the FileUpload</title>
+	<link type="text/css" rel="stylesheet"
+		href="#{request.contextPath}/css/default.css" />
+</h:head>
+<h:body>
+	<p:panel id="loginPanel" visible="#{!userBkB.authenticated}">
+		<p:commandButton id="login" style="margin-right:20px;" value="Login"
+			onclick="dlg.show();" rendered="#{!userBkB.authenticated}">
+		</p:commandButton>
+		<p:commandButton id="register" style="margin-right:20px;"
+			value="Register" onclick="dlg2.show();"
+			rendered="#{!userBkB.authenticated}">
+		</p:commandButton>
+	</p:panel>
+	<h:form id="logoutForm">
+		<p:panel id="logoutPanel" visible="#{userBkB.authenticated}">
+			<p:commandButton id="logout" style="margin-right:20px;"
+				value="Logout" update=":loginPanel,:logoutForm,:fileTableContainer"
+				action="#{userBkB.logout}" rendered="#{userBkB.authenticated}">
+			</p:commandButton>
+			<h:outputLabel id="userLabel" value="Logged as: #{userBkB.user}"
+				rendered="#{userBkB.authenticated}" />
+		</p:panel>
+	</h:form>
+	<p:growl id="growl" life="30000" severity="error;fatal" />
+
+	<p:dialog id="loginDialog" widgetVar="dlg" modal="true"
+		showHeader="false" draggable="false" resizable="false"
+		styleClass="shaker">
+		<h:form>
+			<p:panelGrid columns="2">
+				<f:facet name="header">
+					<h:outputLabel value="Login: " />
+				</f:facet>
+				<h:outputLabel for="login" value="Login: " />
+				<p:inputText id="login" value="#{userBkB.login}"
+					validator="#{userBkB.validateLoginExists}" required="true">
+					<f:validateLength minimum="5" />
+				</p:inputText>
+				<h:outputLabel for="password" value="Password : " />
+				<p:password id="password" value="#{userBkB.password}"
+					required="true">
+					<f:validateLength minimum="5" />
+				</p:password>
+				<f:facet name="footer">
+					<p:commandButton id="loginButton" value="Submit"
+						update=":growl,:loginPanel,:logoutForm,:fileTableContainer"
+						action="#{userBkB.authenticateUser}" style="float:right"
+						oncomplete="handleDialogRequest(xhr, status, args)" />
+					<p:commandButton id="cancelButton" value="Cancel"
+						style="float:right" ajax="false" immediate="true" />
+				</f:facet>
+			</p:panelGrid>
+		</h:form>
+	</p:dialog>
+
+	<p:dialog id="registerDialog" widgetVar="dlg2" modal="true"
+		showHeader="false" draggable="false" resizable="false"
+		styleClass="shaker">
+		<h:form>
+			<p:panelGrid columns="2">
+				<f:facet name="header">
+					<h:outputLabel value="Login: " />
+				</f:facet>
+				<h:outputLabel for="login" value="Login: " />
+				<p:inputText id="login" value="#{userBkB.login}"
+					validator="#{userBkB.validateCanRegisterLogin}" required="true">
+					<f:validateLength minimum="5" />
+				</p:inputText>
+				<h:outputLabel for="name" value="Name : " />
+				<p:inputText id="name" value="#{userBkB.name}" required="true">
+					<f:validateLength minimum="5" />
+				</p:inputText>
+				<h:outputLabel for="password" value="Password : " />
+				<p:password id="password" value="#{userBkB.password}"
+					required="true">
+					<f:validateLength minimum="5" />
+				</p:password>
+				<f:facet name="footer">
+					<p:commandButton id="loginButton" value="Submit"
+						update=":growl,:loginPanel,:logoutForm,:fileTableContainer"
+						action="#{userBkB.addUser}" style="float:right"
+						oncomplete="handleDialogRequest(xhr, status, args)" />
+					<p:commandButton id="cancelButton" value="Cancel"
+						style="float:right" ajax="false" immediate="true" />
+				</f:facet>
+			</p:panelGrid>
+		</h:form>
+	</p:dialog>
+
+	<script type="text/javascript">
+		function handleDialogRequest(xhr, status, args) {
+			if (args.validationFailed || !args.loggedIn) {
+				jQuery('.shaker').effect("shake", {
+					times : 3
+				}, 100);
+			} else {
+				dlg.hide();
+				dlg2.hide();
+			}
+		}
+	</script>
+	<h:panelGroup id="fileTableContainer">
+		<h:form id="fileform">
+
+			<p:contextMenu for="files">
+				<p:menuitem value="View" update="documentPanel"
+					icon="ui-icon-search" oncomplete="documentDialog.show()" />
+				<p:menuitem value="Delete"
+					actionListener="#{fileController.deleteNode}" update="files"
+					icon="ui-icon-close" />
+			</p:contextMenu>
+
+			<p:treeTable value="#{fileController.root}" var="file" id="files"
+				selectionMode="single" selection="#{fileController.selectedNode}"
+				rendered="#{userBkB.authenticated}">
+
+				<p:ajax event="select" listener="#{fileController.onNodeSelect}" update=":growl" />  
+				<f:facet name="header">Right-Click to See Options</f:facet>
+
+				<p:column style="width:150px">
+					<f:facet name="header">Name</f:facet>
+					<h:outputText value="#{file.name}" />
+				</p:column>
+
+				<p:column style="width:100px">
+					<f:facet name="header">Size</f:facet>
+					<h:outputText value="#{file.size}" />
+				</p:column>
+
+			</p:treeTable>
+
+			<p:dialog header="Document Detail" showEffect="fade"
+				widgetVar="documentDialog" modal="true">
+				<p:outputPanel id="documentPanel">
+					<h:panelGrid columns="2" cellpadding="5"
+						rendered="#{not empty fileController.selectedNode}">
+						<h:outputLabel for="name" value="Name: " />
+						<h:outputText id="name"
+							value="#{fileController.selectedNode.data.name}"
+							style="font-weight:bold" />
+
+						<h:outputLabel for="size" value="Size: " />
+						<h:outputText id="size"
+							value="#{fileController.selectedNode.data.size}"
+							style="font-weight:bold" />
+					</h:panelGrid>
+				</p:outputPanel>
+			</p:dialog>
+		</h:form>
+		<h:panelGroup layout="block">
+			<h:form>
+				<p:panelGrid columns="5">
+					<p:commandButton id="downloadButton" value="Download" ajax="false"
+						rendered="#{userBkB.authenticated}">
+						<p:fileDownload
+							value="#{fileController.downloadSelectedFile}" />
+					</p:commandButton>
+					<p:commandButton id="createDirButton" style="margin-right:20px;"
+						value="New Directory" onclick="dlg3.show();"
+						rendered="#{userBkB.authenticated}" />
+					<p:commandButton id="renameButton" style="margin-right:20px;"
+						value="Rename" onclick="dlg4.show();"
+						rendered="#{userBkB.authenticated}" />
+					<p:commandButton id="uploadButton" style="margin-right:20px;"
+						value="Upload" onclick="dlg5.show();"
+						rendered="#{userBkB.authenticated}" />
+					<p:commandButton id="deleteButton" style="margin-right:20px;"
+						value="Delete" actionListener="#{fileController.deleteNode}"
+						rendered="#{userBkB.authenticated}" update=":growl,:fileTableContainer"/>
+				</p:panelGrid>
+			</h:form>
+		</h:panelGroup>
+
+		<p:dialog id="newDirDialog" widgetVar="dlg3" modal="true"
+			showHeader="false" draggable="false" resizable="false"
+			styleClass="shaker">
+			<h:form>
+				<p:panelGrid columns="2">
+					<f:facet name="header">
+						<h:outputLabel value="Name: " />
+					</f:facet>
+					<h:outputLabel for="directoryName" value="Directory name: " />
+					<p:inputText id="directoryName"
+						value="#{fileController.directoryName}" required="true">
+						<f:validateLength minimum="1" />
+					</p:inputText>
+					<f:facet name="footer">
+						<p:commandButton value="Submit"
+							update=":growl,:fileTableContainer"
+							action="#{fileController.makeNewDir}" style="float:right"
+							oncomplete="handleDialogRequest(xhr, status, args)" />
+						<p:commandButton id="cancelButton" value="Cancel"
+							style="float:right" ajax="false" immediate="true" />
+					</f:facet>
+				</p:panelGrid>
+			</h:form>
+		</p:dialog>
+		<p:dialog id="renameDialog" widgetVar="dlg4" modal="true"
+			showHeader="false" draggable="false" resizable="false"
+			styleClass="shaker">
+			<h:form>
+				<p:panelGrid columns="2">
+					<f:facet name="header">
+						<h:outputLabel value="Name: " />
+					</f:facet>
+					<h:outputLabel for="newName" value="New Name: " />
+					<p:inputText id="newName" value="#{fileController.newName}"
+						required="true">
+						<f:validateLength minimum="1" />
+					</p:inputText>
+					<f:facet name="footer">
+						<p:commandButton value="Submit"
+							update=":growl,:fileTableContainer"
+							action="#{fileController.rename}" style="float:right"
+							oncomplete="handleDialogRequest(xhr, status, args)" />
+						<p:commandButton id="cancelButton" value="Cancel"
+							style="float:right" ajax="false" immediate="true" />
+					</f:facet>
+				</p:panelGrid>
+			</h:form>
+		</p:dialog>
+		<p:dialog id="uploadDialog" widgetVar="dlg5" modal="true"
+			showHeader="false" draggable="false" resizable="false"
+			styleClass="shaker">
+			<h:form>
+				<p:panelGrid columns="1">
+					<f:facet name="header">
+						<h:outputLabel value="Name: " />
+					</f:facet>
+					<p:fileUpload fileUploadListener="#{fileController.upload}"
+						description="Select Images" rendered="#{userBkB.authenticated}" />
+					<f:facet name="footer">
+						<p:commandButton value="Submit"
+							update=":growl,:fileTableContainer"
+							action="#{fileController.rename}" style="float:right"
+							oncomplete="handleDialogRequest(xhr, status, args)" />
+						<p:commandButton id="cancelButton" value="Cancel"
+							style="float:right" ajax="false" immediate="true" />
+					</f:facet>
+				</p:panelGrid>
+			</h:form>
+		</p:dialog>
+		<h:form id="uploadForm">
+
+		</h:form>
+	</h:panelGroup>
+	<h:panelGroup styleClass="ui-overlay-hidden">
+		<p:messages severity="warning" />
+	</h:panelGroup>
+</h:body>
+</html>
